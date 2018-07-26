@@ -472,7 +472,7 @@ class Machine(Node, metaclass=MachineType):
             params["commissioning_scripts"] = ",".join(commissioning_scripts)
         if testing_scripts is not None:
             if len(testing_scripts) == 0:
-                params["testing_scripts"] = ""
+                params["testing_scripts"] = ["none"]
             else:
                 params["testing_scripts"] = ",".join(testing_scripts)
         self._data = await self._handler.commission(**params)
